@@ -400,8 +400,12 @@ while r < 21:
     high = 100
     print("Guess ",r)
     wait(1)
-    print("Range for number is ", low, " < NUMBER > ", high)
-    
+    print("Range for number is ", low, " =< NUMBER >= ", high)
+    wait(1)
+    guess = input("What Number do you press?")
+    while guess not in range(0,101) or guess < low or guess > high+1:
+        print("You go to press the ",guess," key but its not there")
+        guess = input("What Number do you press?")
 ##      describe teleporting to a room with 2 pianos and spikes behind you
 ##  start playing guess the number
 ##  rules: you must guess the number in under 15 tries pressing the piano key that corresponds to the number
