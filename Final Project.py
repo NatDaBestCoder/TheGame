@@ -393,15 +393,18 @@ print("You hear the voice again, \"Welcome to GUESS THE NUMBER, Here you must gu
 wait(2)
 
 print("You notice that some of the piano keys are missing and have been replaced by plywood.")
-
+injury = False
+rr = True
 number = random.randrange(0,100)
-while r < 16 or guess == number:
+while rr == True or guess == number:
     low = 0
     high = 100
     print("Guess ",r)
-    if r == 15:
-        print("last guess")
+    if injury == True:
     # line not found
+        print(10-r, " Guesses remaining") 
+    else:
+        print(15-r," Guesses remaining")
     wait(1)
     print("Range for number is ", low, " =< NUMBER >= ", high)
     wait(1)
@@ -415,8 +418,12 @@ while r < 16 or guess == number:
         elif guess > number:
             print("You go and press ", guess, " key, it and all the keys above it fall into what seems to be a void.")
         wait(2)
-        
-        print("Suddenly you have this intrusive thought, \"What would happen if I stuck a part of me in there\"")    
+    
+        print("Suddenly you have this intrusive thought, \"What would happen if I stuck a part of me in there?\"")
+        wait(1)
+        asw = input("Do you Stick in a part of your body?\nValid answers are no/finger/hand/shoulder/everything")
+        if asw == "finger":
+            print("As you put in the finger, you feel a tearing sensation as your finger is torn off your hand, You scream in agony and the walls move in 5 slots.")
     print("You go and press ", guess, " key, it goes down and disappears")
 if guess == number:
     print("You go and press ", guess, " key, all the keys above and below it fall into the void. The only key that does not fall is the one you pressed")
