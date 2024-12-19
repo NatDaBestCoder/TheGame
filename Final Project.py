@@ -402,9 +402,9 @@ while rr == True or guess == number:
     print("Guess ",r)
     if injury == True:
     # line not found
-        print(10-r, " Guesses remaining") 
-    else:
-        print(15-r," Guesses remaining")
+        print(11-r, " Guesses remaining") 
+    elif r >= 2:
+        print(16-r," Guesses remaining")
     wait(1)
     print("Range for number is ", low, " =< NUMBER >= ", high)
     wait(1)
@@ -427,10 +427,12 @@ while rr == True or guess == number:
         wait(1)
         asw = input("Do you Stick in a part of your body?\nValid answers are no/finger/hand/shoulder/everything")
         if asw == "finger":
+            injury = True
             print("As you put in the finger, you feel a tearing sensation as your finger is torn off your hand, You scream in agony and the walls move in 5 slots.")
             wait(2)
             print("You are bleeding from your missing finger, but since the wound is so small you can help stop the bleeding with a piece of your shirt")
         elif asw == "hand":
+            True
             print("As you put in your hand, you feel a tearing sensation as your hand is torn off your arm, You scream in agony and the walls move in 5 slots.")
             wait(2)
             print("Your injury is bleeding a lot but you where in the boy scouts when you where 5 and make a tourniquet from your shirt and a pen you find in the piano")
@@ -460,22 +462,18 @@ else:
     print("The spikes are now touching you and slowly impales you.")
     wait(2)
     ending()
+print("The voice comes back, \"Congrats at Guessing, time for some TRIVIA ON GENERAL SUBJECTS\"")
+wait(2)
+this = (True,False,False,False,False,False,False)
+asw = random.choice(this)
+if injury == True and asw == True:
+    print("You teleport, this time you are not effected but your injury is no longer bleeding and seems to be scabbed over.")
+elif injury == True and asw == False:
+    print("You teleport, this time you are not effected but your bleeding is slowed and is just oozing blood now.")
+else:
+    print("You teleport, this time it does not effect you at all")
+wait(2)
 
-##      describe teleporting to a room with 2 pianos and spikes behind you
-##  start playing guess the number
-##  rules: you must guess the number in under 15 tries pressing the piano key that corresponds to the number
-##  to the left is 1 and the far right is 100
-##  the piano keys fall out of the piano into a void dimension that opens in the piano
-##  have the option to stick hand into the void, if they do they get to decide how far they 
-##  put their hand in options are "Just pinky" "pointer" "hand" "up to elbow" "up to shoulder" and "what the worst that could happen(head)
-##  you lose what you put into the void because the void is actually outerspace
-##  if full body was put in void
-##      describe the popping of their head as they are sucked into the void
-##      quit game
-##  if they put in shoulder or elbow they are bleeding heavily
-##  they are reduced to 10 tries
-##  if they fail to guess in 15 or 10 tries they are stabbed by the wall of spikes
-##  if they win, they are healed one level up, (if up to shoulder they get their upper arm back) and bleeding slows a bit
 ##  congrats at guessing
 ## you are then teleported to a jeopardy style room but its all paper mache
 ## you do trivia with 3 lives 
