@@ -412,9 +412,8 @@ while rr == True or guess == number:
     while guess not in range(0,101) or guess < low or guess > high+1:
         print("You go to press the ",guess," key but its not there")
         guess = input("What Number do you press?")
-        
+    
     if r == 1:
-        
         if guess < number:
             print("You go and press ", guess, " key, it goes down and falls into what seems to be a void.")
         elif guess > number:
@@ -429,10 +428,17 @@ while rr == True or guess == number:
         asw = input("Do you Stick in a part of your body?\nValid answers are no/finger/hand/shoulder/everything")
         if asw == "finger":
             print("As you put in the finger, you feel a tearing sensation as your finger is torn off your hand, You scream in agony and the walls move in 5 slots.")
+            wait(2)
+            print("You are bleeding from your missing finger, but since the wound is so small you can help stop the bleeding with a piece of your shirt")
         elif asw == "hand":
             print("As you put in your hand, you feel a tearing sensation as your hand is torn off your arm, You scream in agony and the walls move in 5 slots.")
+            wait(2)
+            print("Your injury is bleeding a lot but you where in the boy scouts when you where 5 and make a tourniquet from your shirt and a pen you find in the piano")
         elif asw == "shoulder":
             print("As you put in your whole arm, you feel a tearing sensation as your arm is torn from the socket, you scream in agony and the wall moves 5 slots closer")
+            wait(2)
+            print("You are bleeding heavily from your shoulder, you make a makeshift bandage with your shirt tied around your torso. The bandage only makes the blood not go everywhere")
+
         elif asw == "everything":
             print("You think, \"Whats the worst that could happen?\" You Go over and get on top of the piano and you jump in. You are sucked into the void")
             wait(2)
@@ -441,17 +447,20 @@ while rr == True or guess == number:
             print("Your head explodes and you die")
             wait(2)
             ending()
-    print("You go and press ", guess, " key, it goes down and disappears")
+        wait(2)
+        print("You remember hearing the walls move again, you turn around and count the slots, you just lost 5 guesses. \"Curiosity kills the cat\" You say under your breath")
+    else:
+        print("You go and press ", guess, " key, it goes down and disappears into the void.")
 if guess == number:
     print("You go and press ", guess, " key, all the keys above and below it fall into the void. The only key that does not fall is the one you pressed")
     wait(2)
 else:
     print("You go and press ", guess, " key, all the keys fall into the void.")
     wait(2)
-    
     print("The spikes are now touching you and slowly impales you.")
     wait(2)
     ending()
+
 ##      describe teleporting to a room with 2 pianos and spikes behind you
 ##  start playing guess the number
 ##  rules: you must guess the number in under 15 tries pressing the piano key that corresponds to the number
