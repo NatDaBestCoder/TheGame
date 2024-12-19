@@ -486,8 +486,29 @@ wait(2)
 if lives == 4:
     print("the voice says quickly, \"You Beat J with no losses so you get 4 lives to start\"")
     wait(2)
-print("You expect the voice say ready to begin, The voice continues, Question 1")
+print("You expect the voice say begin, The voice continues, Question 1\nWhat is the Year?(IN GAME YEAR)")
+that = ("a","b","c","d")
+asw = input("A: 2024\nB: 1999\nC: 2000\nD: 2176\n Pick A/B/C/D:  ").lower()
+while asw not in that:
+    print("INVALID ANSWER")
+    asw = input("A: 2024\nB: 1999\nC: 2000\nD: 2176\n Pick A/B/C/D:  ").lower()
+if asw == "c":
+    print("You Hear a ding and the voice says, \"CORRECT\"")
+    wait(2)
+else:
+    print("You hear a Buzzer and the voice says, \"WRONG\"\none of the papers fly over to you and gives you a paper cut")
+    wait(2)
+    lives = lives - 1
+    print(lives, "LIVES REMAINING")
+print("QUESTION 2")
 
+
+print("QUESTION 3")
+
+
+print("QUESTION 4")
+
+print("QUESTION 5")
 ## you do trivia with 3 lives 
 ## 
 ##  if you won rps with no losses then you get 4 lives
