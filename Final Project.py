@@ -393,15 +393,17 @@ print("You hear the voice again, \"Welcome to GUESS THE NUMBER, Here you must gu
 wait(2)
 
 print("You notice that some of the piano keys are missing and have been replaced by plywood.")
+wait(1)
+print("The voice says, \"Begin\"")
 injury = False
 rr = True
 number = random.randrange(0,100)
 while rr == True or guess == number:
     low = 0
     high = 100
+    # line not found
     print("Guess ",r)
     if injury == True:
-    # line not found
         print(11-r, " Guesses remaining") 
     elif r >= 2:
         print(16-r," Guesses remaining")
@@ -428,15 +430,19 @@ while rr == True or guess == number:
         asw = input("Do you Stick in a part of your body?\nValid answers are no/finger/hand/shoulder/everything")
         if asw == "finger":
             injury = True
+            itype = "finger"
             print("As you put in the finger, you feel a tearing sensation as your finger is torn off your hand, You scream in agony and the walls move in 5 slots.")
             wait(2)
             print("You are bleeding from your missing finger, but since the wound is so small you can help stop the bleeding with a piece of your shirt")
         elif asw == "hand":
-            True
+            injury = True
+            itype = "hand"
             print("As you put in your hand, you feel a tearing sensation as your hand is torn off your arm, You scream in agony and the walls move in 5 slots.")
             wait(2)
             print("Your injury is bleeding a lot but you where in the boy scouts when you where 5 and make a tourniquet from your shirt and a pen you find in the piano")
         elif asw == "shoulder":
+            injury = True
+            itype = "shoulder"
             print("As you put in your whole arm, you feel a tearing sensation as your arm is torn from the socket, you scream in agony and the wall moves 5 slots closer")
             wait(2)
             print("You are bleeding heavily from your shoulder, you make a makeshift bandage with your shirt tied around your torso. The bandage only makes the blood not go everywhere")
@@ -473,9 +479,15 @@ elif injury == True and asw == False:
 else:
     print("You teleport, this time it does not effect you at all")
 wait(2)
+print("you notice that you are in a room that is made with Papier-mâché. It also looks like the show called jeopardy")
+wait(2)
+print("The voice says, \"This is TRIVIA, here you must answer questions correctly, you have 3 lives, you lose a life anytime you get a question wrong")
+wait(2)
+if lives == 4:
+    print("the voice says quickly, \"You Beat J with no losses so you get 4 lives to start\"")
+    wait(2)
+print("You expect the voice say ready to begin, The voice continues, Question 1")
 
-##  congrats at guessing
-## you are then teleported to a jeopardy style room but its all paper mache
 ## you do trivia with 3 lives 
 ## 
 ##  if you won rps with no losses then you get 4 lives
@@ -486,5 +498,3 @@ wait(2)
 ## you wake at the hospital, handcuffed to the bed.
 ##  a officer comes in and say you are being charged with terrorism and its a miracle you were not injured because the explosion demolish the building
 ## you ask about your INJURY FROM GAME and a nurse comes in and says you always had that
-
-# line not found
