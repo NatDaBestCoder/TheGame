@@ -412,24 +412,45 @@ while rr == True or guess == number:
     while guess not in range(0,101) or guess < low or guess > high+1:
         print("You go to press the ",guess," key but its not there")
         guess = input("What Number do you press?")
+        
     if r == 1:
+        
         if guess < number:
             print("You go and press ", guess, " key, it goes down and falls into what seems to be a void.")
         elif guess > number:
             print("You go and press ", guess, " key, it and all the keys above it fall into what seems to be a void.")
         wait(2)
-    
-        print("Suddenly you have this intrusive thought, \"What would happen if I stuck a part of me in there?\"")
+        print("As you stare at the void, you hear a large rumbling as the wall behind you generates spikes and moves closer. You start examining the room for a way out when the wall stops.")
+        wait(2)
+        print("You notice slots on the side walls that the spike wall seems to stop at. You count the slots in the walls and you see 14.")
+        wait(2)
+        print("You turn back to the pianos. Suddenly you have this intrusive thought, \"What would happen if I stuck a part of me in there?\"")
         wait(1)
         asw = input("Do you Stick in a part of your body?\nValid answers are no/finger/hand/shoulder/everything")
         if asw == "finger":
             print("As you put in the finger, you feel a tearing sensation as your finger is torn off your hand, You scream in agony and the walls move in 5 slots.")
+        elif asw == "hand":
+            print("As you put in your hand, you feel a tearing sensation as your hand is torn off your arm, You scream in agony and the walls move in 5 slots.")
+        elif asw == "shoulder":
+            print("As you put in your whole arm, you feel a tearing sensation as your arm is torn from the socket, you scream in agony and the wall moves 5 slots closer")
+        elif asw == "everything":
+            print("You think, \"Whats the worst that could happen?\" You Go over and get on top of the piano and you jump in. You are sucked into the void")
+            wait(2)
+            print("After jumping in, all the air is sucked out of your lungs. You feel like you are boiling and your last thought is, \"This was a bad ide-\"")
+            wait(2) 
+            print("Your head explodes and you die")
+            wait(2)
+            ending()
     print("You go and press ", guess, " key, it goes down and disappears")
 if guess == number:
     print("You go and press ", guess, " key, all the keys above and below it fall into the void. The only key that does not fall is the one you pressed")
     wait(2)
 else:
     print("You go and press ", guess, " key, all the keys fall into the void.")
+    wait(2)
+    
+    print("The spikes are now touching you and slowly impales you.")
+    wait(2)
     ending()
 ##      describe teleporting to a room with 2 pianos and spikes behind you
 ##  start playing guess the number
