@@ -370,7 +370,7 @@ if l == 3:
     print("\"HAHAHA loser!\" J grabs you and slowly squeezes you till you pop")
     wait(2)
     print("After you die J covers himself in your fluids and learns all of your knowledge and becomes stronger")
-    wait(2)
+    wait(4)
     ending()
 if t == 0:
     lives = 4
@@ -395,10 +395,13 @@ wait(2)
 print("You notice that some of the piano keys are missing and have been replaced by plywood.")
 
 number = random.randrange(0,100)
-while r < 21:
+while r < 16 or guess == number:
     low = 0
     high = 100
     print("Guess ",r)
+    if r == 15:
+        print("last guess")
+    # line not found
     wait(1)
     print("Range for number is ", low, " =< NUMBER >= ", high)
     wait(1)
@@ -406,6 +409,21 @@ while r < 21:
     while guess not in range(0,101) or guess < low or guess > high+1:
         print("You go to press the ",guess," key but its not there")
         guess = input("What Number do you press?")
+    if r == 1:
+        if guess < number:
+            print("You go and press ", guess, " key, it goes down and falls into what seems to be a void.")
+        elif guess > number:
+            print("You go and press ", guess, " key, it and all the keys above it fall into what seems to be a void.")
+        wait(2)
+        
+        print("Suddenly you have this intrusive thought, \"What would happen if I stuck a part of me in there\"")    
+    print("You go and press ", guess, " key, it goes down and disappears")
+if guess == number:
+    print("You go and press ", guess, " key, all the keys above and below it fall into the void. The only key that does not fall is the one you pressed")
+    wait(2)
+else:
+    print("You go and press ", guess, " key, all the keys fall into the void.")
+    ending()
 ##      describe teleporting to a room with 2 pianos and spikes behind you
 ##  start playing guess the number
 ##  rules: you must guess the number in under 15 tries pressing the piano key that corresponds to the number
