@@ -21,6 +21,7 @@ pick = ["rock", "paper", "scissors"]
 #happens after every death
 def ending():
     print("You have died, in the real world you where reported as missing and no one finds anything except THE GAME in its case, waiting for its next victim.")
+    wait(5)
     credits()
     wait(5)
     quit()
@@ -372,7 +373,7 @@ if l == 3:
     print("After you die J covers himself in your fluids and learns all of your knowledge and becomes stronger")
     wait(4)
     ending()
-if t == 0:
+if t == 0 and l == 0:
     lives = 4
 print(result)
 wait(2)
@@ -486,6 +487,7 @@ wait(2)
 if lives == 4:
     print("the voice says quickly, \"You Beat J with no losses so you get 4 lives to start\"")
     wait(2)
+else: lives = 3
 print("You expect the voice say begin, The voice continues, Question 1\nWhat is the Year?(IN GAME YEAR)")
 that = ("a","b","c","d")
 asw = input("A: 2024\nB: 1999\nC: 2000\nD: 2176\n Pick A/B/C/D:  ").lower()
@@ -500,22 +502,118 @@ else:
     wait(2)
     lives = lives - 1
     print(lives, "LIVES REMAINING")
+wait(3)
 print("QUESTION 2")
-
-
+wait(1)
+print("What was the name of the Hand that played Rock, Paper, Scissors against you?")
+wait(1.5)
+asw = input("A: Jay\nB: J\nC: Jayson\nD: Kye\n Pick A/B/C/D:  ").lower()
+while asw not in that:
+    print("INVALID ANSWER")
+    asw = input("A: Jay\nB: J\nC: Jayson\nD: Kye\n Pick A/B/C/D:  ").lower()
+if asw == "b":
+    print("You Hear a ding and the voice says, \"CORRECT\"")
+    wait(2)
+else:
+    print("You hear a Buzzer and the voice says, \"WRONG\"\nOne of the papers fly over to you and gives you a paper cut")
+    wait(2)
+    lives = lives - 1
+    print(lives, " LIVES REMAINING")
+wait(3)
 print("QUESTION 3")
+wait(1)
+print("How do you enter a number in GUESS THE NUMBER?")
+wait(1.5)
+asw = input("A: Fingers\nB: Voice\nC: Keyboard\nD: Piano\n Pick A/B/C/D:  ").lower()
+while asw not in that:
+    print("INVALID ANSWER")
+    asw = input("A: Fingers\nB: Voice\nC: Keyboard\nD: Piano\n Pick A/B/C/D:  ").lower()
+if asw == "d":
+    print("You Hear a ding and the voice says, \"CORRECT\"")
+    wait(2)
+else:
+    print("You hear a Buzzer and the voice says, \"WRONG\"\nOne of the papers fly over to you and gives you a paper cut")
+    wait(2)
+    lives = lives - 1
+    print(lives, " LIVES REMAINING")
+if lives == 0:
+    print("The room falls apart and all the paper give you paper cuts. killing you by a thousand cuts")
+    wait(3)
+    ending()
 
 
 print("QUESTION 4")
+wait(1)
+print("What Color was the disk this game resides on?")
+wait(1.5)
+asw = input("A: Blue\nB: Silver\nC: Clear\nD: Black\n Pick A/B/C/D:  ").lower()
+while asw not in that:
+    print("INVALID ANSWER")
+    asw = input("A: Blue\nB: Silver\nC: Clear\nD: Black\n Pick A/B/C/D:  ").lower()
+if asw == "b":
+    print("You Hear a ding and the voice says, \"CORRECT\"")
+    wait(2)
+else:
+    print("You hear a Buzzer and the voice says, \"WRONG\"\nOne of the papers fly over to you and gives you a paper cut")
+    wait(2)
+    lives = lives - 1
+    print(lives, " LIVES REMAINING")
+if lives == 0:
+    print("The room falls apart and all the paper give you paper cuts. killing you by a thousand cuts")
+    ending()
+
 
 print("QUESTION 5")
-## you do trivia with 3 lives 
-## 
-##  if you won rps with no losses then you get 4 lives
-## if you fail trivia then the paper mache unfolds and starts giving paper cuts, killing you by a thousand cuts
-##  if you win trivia you wake up in the video game store where you bought the game and you are holding the game about to buy it
-## You Have all the injury from the game
-## you freak out and snap the game in half causing a small explosion to go off and you are thrown to the back of the store and pass out,
-## you wake at the hospital, handcuffed to the bed.
-##  a officer comes in and say you are being charged with terrorism and its a miracle you were not injured because the explosion demolish the building
-## you ask about your INJURY FROM GAME and a nurse comes in and says you always had that
+wait(1)
+print("BONUS QUESTION: Was this game fun?")
+wait(1.5)
+asw = input("A: Yes\nB: No\nC: NO\nD: N O\n Pick A/B/C/D:  ").lower()
+while asw not in that:
+    print("INVALID ANSWER")
+    asw = input("A: Yes\nB: No\nC: NO\nD: N O\n Pick A/B/C/D:  ").lower()
+if asw == "a":
+    print("You Hear a ding and the voice says, \"CORRECT\"")
+    wait(2)
+else:
+    print("You realize that that may have been a bad answer because you hear a large rumbling and then you die in every possible way over and over again")
+    ending()
+    
+print("\"Congratulations On winning all games\", Says the voice in a slowing tone, you blink and suddenly you are back at gamestop about to buy the game.")
+wait(2)
+print("In fear, you snap the disk in half causing an explosion. You are flung to the back of the store and you black out")
+wait(2.5)
+if itype == "shoulder":
+    print("You wake up in a hospital, your nose is itchy and you try to itch it but your hand is stopped, you try the other hand, but you don't feel anything")
+    wait(4)
+    print("you look down to see your arm missing and your other arm handcuffed to the bed, a police officer is in the room with you and says,\"Bold of you to bomb a game stop, you lost an arm doing that\"")
+
+elif itype == "hand":
+    print("You wake up in a hospital, your nose is itchy and you try to itch it but your hand is stopped by something, too weak to fight the force, you try the other hand, and all that comes to itch your nose is a stump at your wrist")
+    wait(4)
+    print("You look down to see your other arm handcuffed to the bed, a police officer is in the room with you and says,\"Bold of you to bomb a game stop, you're lucky to just lose a hand\"")
+
+elif itype == "finger":
+    print("You wake up in a hospital, your nose is itchy and you try to itch it but your hand is stopped by something, too weak to fight the force, you try the other hand, it is also stopped")
+    wait(4)
+    print("You look down to see both your arms handcuffed to the bed, you are missing one finger, a police officer is in the room with you and says,\"Bold of you to bomb a game stop, you're lucky to just lose a finger\"")
+
+else:
+    print("You wake up in a hospital, your nose is itchy and you try to itch it but your hand is stopped by something, too weak to fight the force, you try the other hand, it is also stopped")
+    wait(4)
+    print("You look down to see your other arm handcuffed to the bed, a police officer is in the room with you and says,\"Bold of you to bomb a game stop, you're lucky you don't have any major injuries\"")
+wait(3)
+print("ONE MONTH LATER\nYou Are in a mental asylum due to your outlandish story of a game that does not exist, that can teleport you and you had no part in the bombing")
+wait(5)
+print("The Doctors say you have PTSD from something and you can't be tried for the bombing because of insanity")
+wait(4)
+credits()
+print("THE END\nThank you for playing my game, this took about 1 week to make. I hope this was fun!")
+wait(1)
+print("Quitting Game in 3")
+wait(1)
+print("Quitting Game in 2")
+wait(1)
+print("Quitting Game in 1")
+wait(1)
+print("Quitting Game in 0")
+quit()
