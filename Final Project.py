@@ -17,7 +17,7 @@ r = 1
 # used to see if they have typed in their name yet at line 272
 q = 0
 # rps list of things computer can pick
-pick = ["rock", "scissors"]
+pick = ["rock", "paper", "scissors"]
 
 #happens after every death
 def ending():
