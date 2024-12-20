@@ -1,8 +1,6 @@
 import random
-
 # Makes the time.sleep() function be called as wait()
 from time import sleep as wait
-
 # allows the playsound3.playsound() function to be called as playsound()
 from playsound3 import playsound
 # skips the rps portion for testing 1 = true 0 = false
