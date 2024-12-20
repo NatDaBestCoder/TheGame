@@ -5,7 +5,8 @@ from time import sleep as wait
 
 # allows the playsound3.playsound() function to be called as playsound()
 from playsound3 import playsound
-
+# skips the rps portion for testing
+dev = 0
 namec = " "
 # wins losses and ties in rps
 w = 0
@@ -16,7 +17,7 @@ r = 1
 # used to see if they have typed in their name yet at line 272
 q = 0
 # rps list of things computer can pick
-pick = ["rock", "paper", "scissors"]
+pick = ["rock", "scissors"]
 
 #happens after every death
 def ending():
@@ -284,7 +285,7 @@ wait(2.5)
 print("\"Please Enter Name To Agree To Terms And Conditions\" it says louder and more harsh, thats when you notice the keyboard that is floating right in front of you")
 wait(1.5)
 
-asw = input("Do you Type in your name?/n y/n:")
+asw = input("Do you Type in your name?\n y/n:")
 
 while asw != "n" and asw != "y":
     asw = input("INVALID ANSWER \nDo you Type in your name?/n y/n:")
@@ -355,7 +356,7 @@ if asw == "n":
 print("\"Great! Lets Begin\" he somehow makes a face that looks like >:}")
 wait(2)
 # this is rock paper scissors
-while w != 3 and l != 3:
+while w != 3 and l != 3 and dev == 0:
     print("Round", r)
     user_choice = get_user_choice()
     computer_choice = get_computer_choice()
@@ -375,7 +376,6 @@ if l == 3:
     ending()
 if t == 0 and l == 0:
     lives = 4
-print(result)
 wait(2)
 
 print("You somehow win Rock Paper Scissors. J does not seem to be happy about this.")
@@ -398,29 +398,37 @@ wait(1)
 print("The voice says, \"Begin\"")
 injury = False
 rr = True
-number = random.randrange(0,100)
-while rr == True or guess == number:
-    low = 0
-    high = 100
-    # line not found
-    print("Guess ",r)
+guess = ()
+r = 0
+low = 0
+high = 100
+# line not found
+numberg = []
+number = int(random.randrange(0,100))
+while rr == True and guess != number:
+    r = r+1
     if injury == True:
         print(11-r, " Guesses remaining") 
+        if r == 10:
+            rr = False
     elif r >= 2:
         print(16-r," Guesses remaining")
+        if r == 15:
+            rr = False
     wait(1)
-    print("Range for number is ", low, " =< NUMBER >= ", high)
+    print( low, " is greater than or equal to NUMBER is less than or equal to ", high)
     wait(1)
-    guess = input("What Number do you press?")
-    while guess not in range(0,101) or guess < low or guess > high+1:
-        print("You go to press the ",guess," key but its not there")
-        guess = input("What Number do you press?")
-    
+    guess = int(input("What Number do you press?"))
+    if guess < low or guess > high:
+        print("(INVALID ANSWER)   You go to press ", guess," but its not there")
+        guess = int(input("What Number do you press?"))  
     if r == 1:
         if guess < number:
             print("You go and press ", guess, " key, it goes down and falls into what seems to be a void.")
+            low = guess+1
         elif guess > number:
             print("You go and press ", guess, " key, it and all the keys above it fall into what seems to be a void.")
+            high = guess-1
         wait(2)
         print("As you stare at the void, you hear a large rumbling as the wall behind you generates spikes and moves closer. You start examining the room for a way out when the wall stops.")
         wait(2)
@@ -428,7 +436,7 @@ while rr == True or guess == number:
         wait(2)
         print("You turn back to the pianos. Suddenly you have this intrusive thought, \"What would happen if I stuck a part of me in there?\"")
         wait(1)
-        asw = input("Do you Stick in a part of your body?\nValid answers are no/finger/hand/shoulder/everything")
+        asw = input("Do you Stick in a part of your body?\nValid answers are no/finger/hand/shoulder/everything:  ")
         if asw == "finger":
             injury = True
             itype = "finger"
@@ -456,10 +464,19 @@ while rr == True or guess == number:
             print("Your head explodes and you die")
             wait(2)
             ending()
+        else:
+            itype = "none"
         wait(2)
-        print("You remember hearing the walls move again, you turn around and count the slots, you just lost 5 guesses. \"Curiosity kills the cat\" You say under your breath")
+        if injury == True:
+            print("You remember hearing the walls move again, you turn around and count the slots, you just lost 5 guesses. \"Curiosity kills the cat\" You say under your breath")
+    
     else:
-        print("You go and press ", guess, " key, it goes down and disappears into the void.")
+        if guess < number:
+            print("You go and press ", guess, " key, it and all the keys below it fall into the void.")
+            low = guess + 1
+        elif guess > number:
+            print("You go and press ", guess, " key, it and all the keys above it fall into the void.")
+            high = guess - 1
 if guess == number:
     print("You go and press ", guess, " key, all the keys above and below it fall into the void. The only key that does not fall is the one you pressed")
     wait(2)
@@ -581,7 +598,7 @@ else:
 print("\"Congratulations On winning all games\", Says the voice in a slowing tone, you blink and suddenly you are back at gamestop about to buy the game.")
 wait(2)
 print("In fear, you snap the disk in half causing an explosion. You are flung to the back of the store and you black out")
-wait(2.5)
+wait(3)
 if itype == "shoulder":
     print("You wake up in a hospital, your nose is itchy and you try to itch it but your hand is stopped, you try the other hand, but you don't feel anything")
     wait(4)
@@ -605,6 +622,11 @@ wait(3)
 print("ONE MONTH LATER\nYou Are in a mental asylum due to your outlandish story of a game that does not exist, that can teleport you and you had no part in the bombing")
 wait(5)
 print("The Doctors say you have PTSD from something and you can't be tried for the bombing because of insanity")
+wait(4)
+if injury == False:
+    print("This is the Good ending")
+else:
+    print("This is the Bad Ending")
 wait(4)
 credits()
 print("THE END\nThank you for playing my game, this took about 1 week to make. I hope this was fun!")
