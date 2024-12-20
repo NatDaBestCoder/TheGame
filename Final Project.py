@@ -401,8 +401,8 @@ rr = True
 guess = ()
 r = 0
 low = 0
-high = 100
 # line not found
+high = 100
 numberg = []
 number = int(random.randrange(0,100))
 while rr == True and guess != number:
