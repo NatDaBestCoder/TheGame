@@ -5,7 +5,7 @@ from time import sleep as wait
 
 # allows the playsound3.playsound() function to be called as playsound()
 from playsound3 import playsound
-# skips the rps portion for testing
+# skips the rps portion for testing 1 = true 0 = false
 dev = 0
 namec = " "
 # wins losses and ties in rps
@@ -21,7 +21,7 @@ pick = ["rock", "paper", "scissors"]
 
 #happens after every death
 def ending():
-    print("You have died, in the real world you where reported as missing and no one finds anything except THE GAME in its case, waiting for its next victim.")
+    print("You have died, in the real world you were reported as missing and no one finds anything except THE GAME in its case, waiting for its next victim.")
     wait(5)
     credits()
     wait(5)
@@ -285,10 +285,10 @@ wait(2.5)
 print("\"Please Enter Name To Agree To Terms And Conditions\" it says louder and more harsh, thats when you notice the keyboard that is floating right in front of you")
 wait(1.5)
 
-asw = input("Do you Type in your name?\n y/n:")
+asw = input("Do you Type in your name?\ny/n:")
 
 while asw != "n" and asw != "y":
-    asw = input("INVALID ANSWER \nDo you Type in your name?/n y/n:")
+    asw = input("INVALID ANSWER \nDo you Type in your name?\ny/n:")
     
 if asw == "n":
 
